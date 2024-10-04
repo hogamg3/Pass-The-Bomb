@@ -1,313 +1,230 @@
---[[ Pass The Bomb
-Discord https://discord.gg/EhDUagAhCE --]]
+local TweenService = game:GetService("TweenService")
 local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local TitleBar = Instance.new("TextLabel")
-local TabContainer = Instance.new("Frame")
-local AntiSlipperyTab = Instance.new("TextButton")
-local CreditsTab = Instance.new("TextButton")
-local TabIndicator = Instance.new("Frame")
-local ContentFrame = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local Decal = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local Join = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local No = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local CloseButton = Instance.new("TextButton")
-local CreditsFrame = Instance.new("Frame")
-local CreditsLabel = Instance.new("TextLabel")
-local CopyDiscordLinkButton = Instance.new("TextButton")
-local ReturnToPlayerButton = Instance.new("TextButton")
-local InfiniteYieldButton = Instance.new("TextButton")
-local AutofarmCoinsButton = Instance.new("TextButton")
-local AntiSlipperyButton = Instance.new("TextButton")
-local ToggleVisibilityButton = Instance.new("TextButton")
 
-ScreenGui.Name = "AntiSlipperyUI"
-ScreenGui.Parent = game.CoreGui
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-MainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
-MainFrame.Size = UDim2.new(0, 300, 0, 200)
-MainFrame.Active = true
-MainFrame.Draggable = true 
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.35, 0, 0.30, 0)
+Frame.Size = UDim2.new(0.3, 0, 0.4, 0)
 
-TitleBar.Name = "TitleBar"
-TitleBar.Parent = MainFrame
-TitleBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-TitleBar.Size = UDim2.new(1, 0, 0, 30)
-TitleBar.Font = Enum.Font.SourceSansBold
-TitleBar.Text = "Anti Slippery Menu"
-TitleBar.TextColor3 = Color3.new(1, 1, 1)
-TitleBar.TextSize = 16
-TitleBar.TextXAlignment = Enum.TextXAlignment.Center
+
+Decal.Name = "BackgroundDecal"
+Decal.Size = UDim2.new(1, 0, 1, 0)
+Decal.Position = UDim2.new(0, 0, 0, 0)
+Decal.Image = "rbxassetid://80997535982961"
+Decal.BackgroundTransparency = 1
+Decal.Parent = Frame
+
+
+local DecalCorner = Instance.new("UICorner")
+DecalCorner.CornerRadius = UDim.new(0, 10)
+DecalCorner.Parent = Decal
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0872274116, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.850467265, 0, 0.142045453, 0)
+TextLabel.Font = Enum.Font.RobotoMono
+TextLabel.Text = "Hello Player"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 1.000
+TextLabel.TextWrapped = true
+TextLabel.BackgroundTransparency = 1
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.142045453, 0)
+TextLabel_2.Size = UDim2.new(1, 0, 0.142045453, 0)
+TextLabel_2.Font = Enum.Font.RobotoMono
+TextLabel_2.Text = "Want to join the Skibidi Sigma Community?"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 10
+TextLabel_2.TextWrapped = true
+TextLabel_2.BackgroundTransparency = 0.2
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 0.284090906, 0)
+TextLabel_3.Size = UDim2.new(1, 0, 0.142045453, 0)
+TextLabel_3.Font = Enum.Font.RobotoMono
+TextLabel_3.Text = "If You Do You can Support the script by making this script go more popular"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 10
+TextLabel_3.TextWrapped = true
+TextLabel_3.BackgroundTransparency = 0.2
+
+TextLabel_5.Parent = Frame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0, 0, 0.60, 0)
+TextLabel_5.Size = UDim2.new(1, 0, 0.15, 0)
+TextLabel_5.Font = Enum.Font.Roboto
+TextLabel_5.Text = "by @aliwastaken54565 Owner Of Pocket Hub"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 0, 255)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 1
+TextLabel_5.TextWrapped = true
+TextLabel_5.BackgroundTransparency = 0.1
+
 
 CloseButton.Name = "CloseButton"
-CloseButton.Parent = TitleBar
+CloseButton.Size = UDim2.new(0.1, 0, 0.12, 0)
+CloseButton.Position = UDim2.new(0.9, 0, 0, 0)
 CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CloseButton.Size = UDim2.new(0, 30, 0, 30)
-CloseButton.Position = UDim2.new(1, -30, 0, 0)
-CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.BorderSizePixel = 0
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.new(1, 1, 1)
-CloseButton.TextSize = 16
-CloseButton.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
-end)
+CloseButton.Font = Enum.Font.Cartoon
+CloseButton.TextSize = 24
+CloseButton.TextWrapped = true
+CloseButton.Parent = Frame
 
-TabContainer.Name = "TabContainer"
-TabContainer.Parent = MainFrame
-TabContainer.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-TabContainer.Position = UDim2.new(0, 0, 0, 30)
-TabContainer.Size = UDim2.new(0, 100, 1, -30)
-
-AntiSlipperyTab.Name = "AntiSlipperyTab"
-AntiSlipperyTab.Parent = TabContainer
-AntiSlipperyTab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-AntiSlipperyTab.Position = UDim2.new(0, 0, 0, 0)
-AntiSlipperyTab.Size = UDim2.new(1, 0, 0, 30)
-AntiSlipperyTab.Font = Enum.Font.SourceSansBold
-AntiSlipperyTab.Text = "Main"
-AntiSlipperyTab.TextColor3 = Color3.new(1, 1, 1)
-AntiSlipperyTab.TextSize = 16
-
-CreditsTab.Name = "CreditsTab"
-CreditsTab.Parent = TabContainer
-CreditsTab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-CreditsTab.Position = UDim2.new(0, 0, 0, 30)
-CreditsTab.Size = UDim2.new(1, 0, 0, 30)
-CreditsTab.Font = Enum.Font.SourceSansBold
-CreditsTab.Text = "Credits"
-CreditsTab.TextColor3 = Color3.new(1, 1, 1)
-CreditsTab.TextSize = 16
-
-TabIndicator.Name = "TabIndicator"
-TabIndicator.Parent = TabContainer
-TabIndicator.BackgroundColor3 = Color3.fromRGB(0, 162, 255)
-TabIndicator.BorderSizePixel = 0
-TabIndicator.Position = UDim2.new(0, 0, 0, 0)
-TabIndicator.Size = UDim2.new(1, 0, 0, 4)
-
-ContentFrame.Name = "ContentFrame"
-ContentFrame.Parent = MainFrame
-ContentFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-ContentFrame.Position = UDim2.new(0, 100, 0, 30)
-ContentFrame.Size = UDim2.new(1, -100, 1, -30)
+UICorner_4.CornerRadius = UDim.new(0, 10) -- This gives a nice rounded corner
+UICorner_4.Parent = CloseButton
 
 
-ReturnToPlayerButton.Name = "ReturnToPlayerButton"
-ReturnToPlayerButton.Parent = ContentFrame
-ReturnToPlayerButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ReturnToPlayerButton.Position = UDim2.new(0.5, -100, 0.1, -15)
-ReturnToPlayerButton.Size = UDim2.new(0, 200, 0, 30)
-ReturnToPlayerButton.Font = Enum.Font.SourceSansBold
-ReturnToPlayerButton.Text = "Return To Player"
-ReturnToPlayerButton.TextColor3 = Color3.new(1, 1, 1)
-ReturnToPlayerButton.TextSize = 20
-
-ReturnToPlayerButton.MouseButton1Down:Connect(function()
-    local LocalPlayer = game.Players.LocalPlayer
-    local Character = LocalPlayer.Character
-
-    game:GetService("RunService").Stepped:Connect(function()
-        pcall(function()
-            if LocalPlayer.Backpack:FindFirstChild("Bomb") then
-                print("backpack bomb")
-                LocalPlayer.Backpack:FindFirstChild("Bomb").Parent = Character
-            else
-                print("no backpack bomb")
-            end
-            if LocalPlayer.Character:FindFirstChild("Bomb") then
-                print("character bomb")
-                local BombEvent = LocalPlayer.Character:FindFirstChild("Bomb"):FindFirstChild("RemoteEvent")
-                for _,Player in next, game.Players:GetPlayers() do
-                    if Player ~= LocalPlayer then
-                        if Player.Character and Player.Character.Parent == workspace then
-                            warn("Hitting" .. Player.Name)
-                            local LastPlace = Character.HumanoidRootPart.CFrame
-                            for i=1,50 do
-                                Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame
-                            end
-                            wait(0.1)
-                            BombEvent:FireServer(Player.Character, Player.Character:FindFirstChild("CollisionPart"))
-                            wait()
-                            Character.HumanoidRootPart.CFrame = LastPlace
-                            break;
-                        end 
-                    end
-                end
-            else
-                print("No character bomb")
-            end
-        end)
+local function closeUI()
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+    local goal = {Size = UDim2.new(0, 0, 0, 0), BackgroundTransparency = 1}
+    local tween = TweenService:Create(Frame, tweenInfo, goal)
+    
+    tween:Play()
+    tween.Completed:Connect(function()
+        ScreenGui:Destroy()
     end)
-
-    game.StarterGui:SetCore("SendNotification",{
-        Title = "Notification";
-        Text = "RTS loaded";
-        Icon = "7164585376";
-    })
-
-    game.StarterGui:SetCore("SendNotification",{
-        Title = "Notification";
-        Text = "Press button after every round";
-        Icon = "7164585376";
-    })
-end)
-
-
-InfiniteYieldButton.Name = "InfiniteYieldButton"
-InfiniteYieldButton.Parent = ContentFrame
-InfiniteYieldButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-InfiniteYieldButton.Position = UDim2.new(0.5, -100, 0.3, -15)
-InfiniteYieldButton.Size = UDim2.new(0, 200, 0, 30)
-InfiniteYieldButton.Font = Enum.Font.SourceSansBold
-InfiniteYieldButton.Text = "Infinite Yield"
-InfiniteYieldButton.TextColor3 = Color3.new(1, 1, 1)
-InfiniteYieldButton.TextSize = 20
-
-InfiniteYieldButton.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-end)
-
-
-AutofarmCoinsButton.Name = "AutofarmCoinsButton"
-AutofarmCoinsButton.Parent = ContentFrame
-AutofarmCoinsButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-AutofarmCoinsButton.Position = UDim2.new(0.5, -100, 0.5, -15)
-AutofarmCoinsButton.Size = UDim2.new(0, 200, 0, 30)
-AutofarmCoinsButton.Font = Enum.Font.SourceSansBold
-AutofarmCoinsButton.Text = "Autofarm Coins"
-AutofarmCoinsButton.TextColor3 = Color3.new(1, 1, 1)
-AutofarmCoinsButton.TextSize = 20
-
-local autofarmEnabled = false
-
-local function autofarmCoins()
-    local visitedCoins = {}
-    while autofarmEnabled do
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-        for _, coin in pairs(workspace:GetDescendants()) do
-            if coin:IsA("Part") and coin.Name == "PP" and coin.Size == Vector3.new(0.5, 2.5, 2.5) and not visitedCoins[coin] then
-                visitedCoins[coin] = true
-                character.HumanoidRootPart.CFrame = coin.CFrame
-                wait(0.2)
-            end
-        end
-        wait(1)
-    end
 end
 
-AutofarmCoinsButton.MouseButton1Click:Connect(function()
-    autofarmEnabled = not autofarmEnabled
-    if autofarmEnabled then
-        AutofarmCoinsButton.Text = "Stop Autofarm"
-        spawn(autofarmCoins)
-    else
-        AutofarmCoinsButton.Text = "Autofarm Coins"
-    end
-end)
+local function CloseButtonScript()
+    local script = Instance.new('LocalScript', CloseButton)
 
 
-AntiSlipperyButton.Name = "AntiSlipperyButton"
-AntiSlipperyButton.Parent = ContentFrame
-AntiSlipperyButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-AntiSlipperyButton.Position = UDim2.new(0.5, -100, 0.7, -15)
-AntiSlipperyButton.Size = UDim2.new(0, 200, 0, 30)
-AntiSlipperyButton.Font = Enum.Font.SourceSansBold
-AntiSlipperyButton.Text = "Anti Slippery: OFF"
-AntiSlipperyButton.TextColor3 = Color3.new(1, 1, 1)
-AntiSlipperyButton.TextSize = 20
-
-local antiSlipperyEnabled = false
-
-local function applyAntiSlippery()
-    while antiSlipperyEnabled do
-        local LocalPlayer = game.Players.LocalPlayer
-        local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-        local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-        HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 0, 0)
-        wait(0.1)
-    end
+    script.Parent.MouseButton1Click:Connect(function()
+        closeUI()
+    end)
 end
-
-AntiSlipperyButton.MouseButton1Click:Connect(function()
-    antiSlipperyEnabled = not antiSlipperyEnabled
-    if antiSlipperyEnabled then
-        AntiSlipperyButton.Text = "Anti Slippery: ON"
-        spawn(applyAntiSlippery)
-    else
-        AntiSlipperyButton.Text = "Anti Slippery: OFF"
-    end
-end)
+coroutine.wrap(CloseButtonScript)()
 
 
-CreditsFrame.Name = "CreditsFrame"
-CreditsFrame.Parent = MainFrame
-CreditsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-CreditsFrame.Position = UDim2.new(0, 100, 0, 30)
-CreditsFrame.Size = UDim2.new(1, -100, 1, -30)
-CreditsFrame.Visible = false
+Join.Name = "Join"
+Join.Parent = Frame
+Join.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Join.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Join.BorderSizePixel = 0
+Join.Position = UDim2.new(0, 0, 0.86, 0)
+Join.Size = UDim2.new(0.48, 0, 0.11, 0)
+Join.Font = Enum.Font.RobotoCondensed
+Join.Text = "Copy server Link"
+Join.TextColor3 = Color3.fromRGB(255, 255, 255)
+Join.TextScaled = true
+Join.TextSize = 14.000
+Join.TextWrapped = true
 
-CreditsLabel.Name = "CreditsLabel"
-CreditsLabel.Parent = CreditsFrame
-CreditsLabel.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-CreditsLabel.Position = UDim2.new(0.5, -100, 0.3, -15)
-CreditsLabel.Size = UDim2.new(0, 200, 0, 30)
-CreditsLabel.Font = Enum.Font.SourceSansBold
-CreditsLabel.Text = "Created by Ocfi, \n Join My Discord"
-CreditsLabel.TextColor3 = Color3.new(1, 1, 1)
-CreditsLabel.TextSize = 18
+UICorner.Parent = Join
 
-CopyDiscordLinkButton.Name = "CopyDiscordLinkButton"
-CopyDiscordLinkButton.Parent = CreditsFrame
-CopyDiscordLinkButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-CopyDiscordLinkButton.Position = UDim2.new(0.5, -100, 0.7, -15)
-CopyDiscordLinkButton.Size = UDim2.new(0, 200, 0, 30)
-CopyDiscordLinkButton.Font = Enum.Font.SourceSansBold
-CopyDiscordLinkButton.Text = "Copy Discord Link"
-CopyDiscordLinkButton.TextColor3 = Color3.new(1, 1, 1)
-CopyDiscordLinkButton.TextSize = 20
+No.Name = "No"
+No.Parent = Frame
+No.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+No.BorderColor3 = Color3.fromRGB(0, 0, 0)
+No.BorderSizePixel = 0
+No.Position = UDim2.new(0.52, 0, 0.86, 0)
+No.Size = UDim2.new(0.48, 0, 0.11, 0)
+No.Font = Enum.Font.RobotoCondensed
+No.Text = "Continue Using script"
+No.TextColor3 = Color3.fromRGB(255, 255, 255)
+No.TextScaled = true
+No.TextSize = 14.000
+No.TextWrapped = true
 
-CopyDiscordLinkButton.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/EhDUagAhCE")
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Discord Link";
-        Text = "Copied to clipboard!";
-        Duration = 5;
-    })
-end)
+UICorner_2.Parent = No
+
+UICorner_3.Parent = Frame
 
 
-local function switchTab(selectedTab)
-    ContentFrame.Visible = selectedTab == "Main"
-    CreditsFrame.Visible = selectedTab == "Credits"
-    TabIndicator.Position = UDim2.new(0, 0, 0, (selectedTab == "Credits" and 30 or 0))
+-- Scripts:
+
+local function VQZGU_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local player = game.Players.LocalPlayer
+	local textbox = script.Parent
+	textbox.Text = "Hello "..player.DisplayName
 end
+coroutine.wrap(VQZGU_fake_script)()
+local function CEYZO_fake_script() -- Join.LocalScript 
+	local script = Instance.new('LocalScript', Join)
 
-AntiSlipperyTab.MouseButton1Click:Connect(function()
-    switchTab("Main")
-end)
+	script.Parent.MouseButton1Click:Connect(function()
+		setclipboard("https://discord.gg/j84qjuCH")
+	end)
+end
+coroutine.wrap(CEYZO_fake_script)()
+local function YTZH_fake_script() -- Join.LocalScript 
+	local script = Instance.new('LocalScript', Join)
 
-CreditsTab.MouseButton1Click:Connect(function()
-    switchTab("Credits")
-end)
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/hogamg3/Pass-The-Bomb-2/refs/heads/main/deobuf"))()
+	end)
+end
+coroutine.wrap(YTZH_fake_script)()
+local function TCMAS_fake_script() -- Join.LocalScript 
+	local script = Instance.new('LocalScript', Join)
 
+	script.Parent.MouseButton1Click:Connect(function()
+		wait(0.5)
+		closeUI()
+	end)
+end
+coroutine.wrap(TCMAS_fake_script)()
+local function UXPUVQZ_fake_script() -- No.LocalScript 
+	local script = Instance.new('LocalScript', No)
 
-switchTab("Main")
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/hogamg3/Pass-The-Bomb-2/refs/heads/main/deobuf"))()
+	end)
+end
+coroutine.wrap(UXPUVQZ_fake_script)()
+local function HQXZNVV_fake_script() -- No.LocalScript 
+	local script = Instance.new('LocalScript', No)
 
+	script.Parent.MouseButton1Click:Connect(function()
+		wait(0.5)
+		closeUI()
+	end)
+end
+coroutine.wrap(HQXZNVV_fake_script)()
+local function CBNBHDU_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
 
-ToggleVisibilityButton.Name = "ToggleVisibilityButton"
-ToggleVisibilityButton.Parent = ScreenGui
-ToggleVisibilityButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ToggleVisibilityButton.BorderColor3 = Color3.fromRGB(0, 162, 255)
-ToggleVisibilityButton.Position = UDim2.new(0.5, -50, 0.35, 0)  
-ToggleVisibilityButton.Size = UDim2.new(0, 135, 0, 30)
-ToggleVisibilityButton.Font = Enum.Font.SourceSansBold
-ToggleVisibilityButton.Text = "Toggle Anti Slippery Menu"
-ToggleVisibilityButton.TextColor3 = Color3.new(1, 1, 1)
-ToggleVisibilityButton.TextSize = 14
-ToggleVisibilityButton.Draggable = true  
-
-ToggleVisibilityButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = not MainFrame.Visible
-end)
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(CBNBHDU_fake_script)()
